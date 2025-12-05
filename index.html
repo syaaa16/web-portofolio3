@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Aji Arsya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#about-me" class="logo">Portofolio</a>
+            <ul class="nav-links">
+                <li><a href="#about-me">Home</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#project-gallery">Projects</a></li>
+                <li><a href="#contact-me">Contact</a></li>
+                <li><a id="btn">darkmode</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-me" class="about-section">
+            <div class="about-image-container">
+                <img src="7e8eb915-fe74-4ebf-8bb4-2cfa20b4d321-removebg-preview.png" alt="Foto Profil" class="profile-photo">
+            </div>
+            <div class="about-content">
+                <h3>Halo, Saya</h3>
+                <h1>Aji Arsya Heranawa Putra</h1>
+                <p>
+                    Saya seorang Front End Developer yang fokus pada pengembangan web yang efisien. Bersemangat dalam kolaborasi dan selalu mencari tantangan baru.
+                </p>
+                <h2>Keahlian</h2>
+                <ul class="skill-list">
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Figma</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="project-gallery" class="project-gallery-section">
+    <h2>Karya Pilihan</h2>
+    <div class="projects-container">
+        <div class="project-item">
+            <img src="https://cdn.dribbble.com/userupload/8970231/file/original-c53822b531c4d320093a94238931d089.png?format=webp&resize=400x300&vertical=center" alt="P1 Thumbnail" class="project-thumbnail">
+            <div class="project-details">
+                <h3>Landing Page music website</h3>
+                <p>Halaman depan fiksi, fokus pada tata letak dan design yang terbaik</p>
+                
+            </div>
+        </div>
+        <div class="project-item">
+            <img src="https://i.pinimg.com/736x/23/04/93/230493176b121c0a7b64000690e0d66b.jpg" alt="P2 Thumbnail" class="project-thumbnail">
+            <div class="project-details">
+                <h3>website jual beli tanaman DLL</h3>
+                <p>website dengan menawarkan websitebertemakan tanaman</p>
+            </div>      
+        </div>  
+        <div class="project-item">
+            <img src="https://1.bp.blogspot.com/-i78iKr_P9Pk/X9ohjXyc5eI/AAAAAAAAA_4/8UauxZaOgUshGK7MXwW1gZqts7Zrf_AewCLcBGAsYHQ/s1280/Todo%2BList%2BApp%2Busing%2BHTML%2BCSS%2B%2526%2BJavaScript.webp" alt="P2 Thumbnail" class="project-thumbnail">
+            <div class="project-details">
+                <h3>todolist</h3>
+                <p>website yang menggunakan localhost JavaScript</p>
+            </div>      
+        </div>  
+    </div>
+</section>
+
+
+
+    </main>
+    <footer id="contact-me" class="contact-footer">
+        <h2>Hubungi Saya</h2>
+        <div class="social-links">
+            <a href="https://github.com/syaaa16" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/bung.jieee?igsh=aTFxM3p5cWM2cHhn" target="_blank" title=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.8em;">&copy; 2025 Aji Arsya. All rights reserved.</p>
+    </footer>
+<script>
+const btn = document.getElementById('btn');
+const body = document.body;
+
+btn.addEventListener('click', function() {
+    
+    body.classList.toggle('darkmode');
+    if (body.classList.contains('darkmode')) {
+        
+        btn.textContent = 'Default Mode';
+    } else {
+        btn.textContent = 'Dark Mode';
+    }
+});
+</script>
+</body>
+</html>

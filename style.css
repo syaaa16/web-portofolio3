@@ -1,0 +1,359 @@
+/*
+========================================
+Global Reset & Body Styling
+========================================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+    /* Tambah padding atas agar konten tidak tertutup fixed navbar */
+    padding-top: 60px;
+}
+
+/*
+========================================
+Dark Mode Overrides
+========================================
+*/
+.darkmode {
+    background-color: black;
+    color: #f8f9fa; /* Warna teks utama menjadi putih/terang */
+}
+
+/* Mengubah warna teks H1 dan H3 saat dark mode */
+.darkmode h1,
+.darkmode h3,
+.darkmode h2 { 
+    color: white !important; /* Tambahkan !important jika perlu, meskipun biasanya tidak */
+}
+
+/* Mengubah background Navbar (yang awalnya putih) menjadi gelap */
+.darkmode .navbar {
+    background-color: #212529; /* Warna gelap untuk navbar */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Ubah shadow agar terlihat di latar belakang gelap */
+}
+
+/* Mengubah tautan di navbar */
+.darkmode .nav-links a {
+    color: #ced4da; /* Warna link menjadi lebih terang */
+}
+
+/* Mengubah latar belakang Project Item (yang awalnya putih) menjadi gelap */
+.darkmode .project-item {
+    background-color: #343a40; /* Warna gelap untuk item proyek */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Mengubah list skill (yang awalnya abu-abu terang) menjadi gelap */
+.darkmode .skill-list li {
+    background-color: #495057; /* Warna gelap untuk skill tag */
+    color: #f8f9fa;
+}
+
+/* Mengubah warna teks detail proyek agar terlihat */
+.darkmode .project-details p {
+    color: #ced4da; /* Warna teks deskripsi proyek */
+}
+
+/* Mengubah elemen di About Section yang punya warna spesifik */
+.darkmode .about-content h1 {
+    color: white !important; /* Menimpa warna H1 */
+}
+
+.darkmode .about-content h3 {
+    color: #adb5bd !important; /* Menimpa warna H3 */
+}
+
+.darkmode .about-content p {
+    color: #ced4da; /* Menimpa warna paragraf */
+}
+/*
+========================================
+Navbar (Fixed)
+========================================
+*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 18px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Dibuat FIXED */
+    position: fixed;
+    top: 0;
+    width: 100%; /* Agar memenuhi lebar penuh */
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+/*
+========================================
+About Me Section
+========================================
+*/
+.about-section {
+    padding: 80px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    flex: 2;
+}
+
+.about-content h1 {
+    font-size: 2.5em;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.about-content h3 {
+    font-size: 1.2em;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.skill-list li {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 6px 12px;
+    border-radius: 15px;
+    margin: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/*
+========================================
+Project Gallery Section
+========================================
+*/
+.project-gallery-section {
+    padding: 50px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-gallery-section h2 {
+    font-size: 2em;
+    color: #212529;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* WADAH BARU UNTUK KARTU (CARD) */
+.projects-container {
+    display: grid;
+    /* Membuat 3 kolom dengan ukuran yang sama */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Jarak antar kartu */
+}
+
+.project-item {
+    /* Menghilangkan flex karena sudah diatur oleh grid container */
+    /* display: flex; <--- Dihapus */
+    flex-direction: column; /* Mengatur konten di dalam kartu vertikal */
+    text-align: center; /* Teks di tengah */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* align-items: center; <--- Dihapus */
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Efek hover minor */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-thumbnail {
+    width: 100%; /* Memenuhi lebar card */
+    height: 150px; /* Tinggi tetap untuk thumbnail */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #adb5bd; /* Placeholder/Fallback color */
+    /* margin-right: 15px; <--- Dihapus */
+}
+
+.project-details {
+    /* Membuat project-details memenuhi ruang yang tersisa jika perlu */
+    flex-grow: 1;
+}
+
+.project-details h3 {
+    color: #007bff;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.project-details p {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* Penyesuaian Dark Mode untuk Project Card */
+.darkmode .project-item {
+    background-color: #343a40; 
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.darkmode .project-item:hover {
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ... Sisa CSS Anda (Navbar, About, Footer, Media Queries) ... */
+
+@media (max-width: 768px) {
+    /* ... bagian lain di media query ... */
+    
+    /* Penyesuaian untuk tampilan card di mobile */
+    .projects-container {
+        /* Di layar kecil, kartu akan disusun 1 kolom */
+        grid-template-columns: 1fr;
+    }
+    
+    .project-item {
+        /* Tidak perlu diubah lagi karena sudah diatur oleh projects-container */
+    }
+
+    .project-thumbnail {
+        margin: 0 auto 10px auto; /* Kembali ke auto margin untuk tengah */
+    }
+}
+/*
+========================================
+Contact Footer
+========================================
+*/
+.contact-footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.contact-footer h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.4em;
+    margin: 0 8px;
+}
+
+/*
+========================================
+Media Queries (Responsiveness)
+========================================
+*/
+@media (max-width: 768px) {
+    body {
+        /* Sesuaikan padding untuk mobile */
+        padding-top: 55px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* Sembunyikan Nav Links untuk mobile, biasanya diganti menu hamburger (belum ada di HTML) */
+    .nav-links {
+        display: none;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .about-content h1 {
+        font-size: 2em;
+    }
+
+    .project-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-thumbnail {
+        margin: 0 0 10px 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
